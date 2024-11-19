@@ -43,5 +43,5 @@ public class FacturaDetallePrincipal {
 		System.out.println(facturaDetalle.toString());
 	
 	}
-
+ 
 }
