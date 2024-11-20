@@ -18,8 +18,7 @@ public class FacturaDetallePrincipal {
 		factura.setFecha(new Date());
 		factura.setTotalNeto(120.50);
 		factura.setIva(15.30);
-		factura.setTotal(116.20);
-		
+		factura.setTotal(116.20);	
 		Libro libro = new Libro(); 
 		
 		libro.setIdLibro(1);
@@ -37,9 +36,7 @@ public class FacturaDetallePrincipal {
 		libro.setPresentacion("Fuerte");
 		libro.setPrecio(130.20);
 
-		
 		FacturaDetalle facturaDetalle = new FacturaDetalle(1, 124.00, 156.18, factura, libro);
-		
 		System.out.println(facturaDetalle.toString());
 	
 	}

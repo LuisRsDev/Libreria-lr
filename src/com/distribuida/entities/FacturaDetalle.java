@@ -8,6 +8,9 @@ public class FacturaDetalle {
 	
 	private Factura factura; 
 	private Libro libro;
+	
+	public FacturaDetalle() {}
+	
 	public FacturaDetalle(int idFacturaDetalle, Double cantidad, Double subtotal, Factura factura, Libro libro) {
 		
 		this.idFacturaDetalle = idFacturaDetalle;
