@@ -21,14 +21,14 @@ public class LibroPrincipal {
 		libro.setIdLibro(1);
 		libro.setTitulo("Don quijote");
 		libro.setEditorial("Montevideo");
-		libro.setNumPaginas("13400");
+		libro.setNumPaginas(13400);
 		libro.setEdicion("ilimitada");
 		libro.setIdioma("español");
 		libro.setFechaPublicacion(new Date());
 		libro.setDescripcion("Fantasia"); 
 		libro.setTipodePasta("Doble");
 		libro.setIsbn("123");
-		libro.setNumEjemplares("123555");
+		libro.setNumEjemplares(123555);
 		libro.setPortada("Elegante");
 		libro.setPresentacion("Fuerte");
 		libro.setPrecio(130.20);

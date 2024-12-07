@@ -2,29 +2,62 @@ package com.distribuida.entities;
 
 import java.util.Date;
 
+import javax.persistence.CascadeType;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.Table;
+
+@Entity
+@Table(name = "libro")
 public class Libro {
+	
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name = "id_libro")
 	private int idLibro; 
+	@Column(name = "titulo")
 	private String titulo;
+	@Column(name = "editorial")
 	private String editorial;
-	private String numPaginas; 
+	@Column(name = "num_paginas")
+	private double numPaginas; 
+	@Column(name = "edicion")
 	private String edicion;
+	@Column(name = "idioma")
 	private String idioma;
+	@Column(name = "fecha_publicacion")
 	private Date fechaPublicacion;
+	@Column(name = "descripcion")
 	private String descripcion;
+	@Column(name = "tipo_pasta")
 	private String tipodePasta;
+	@Column(name = "ISBN")
 	private String isbn;
-	private String numEjemplares;  
+	@Column(name = "num_ejemplares")
+	private int numEjemplares;  
+	@Column(name = "portada")
 	private String portada;
+	@Column(name = "presentacion")
 	private String presentacion;
+	@Column(name = "precio")
 	private Double precio;
 	
+	@JoinColumn (name= "id_categoria")
+	@ManyToOne(cascade = {CascadeType.DETACH, CascadeType.MERGE, CascadeType.PERSIST, CascadeType.REFRESH })
 	private Categoria categoria;
+	@JoinColumn (name= "id_autor")
+	@ManyToOne(cascade = {CascadeType.DETACH, CascadeType.MERGE, CascadeType.PERSIST, CascadeType.REFRESH })
 	private Autor autor; 
 	
 	public Libro() {}
 
-	public Libro(int idLibro, String titulo, String editorial, String numPaginas, String edicion, String idioma,
-			Date fechaPublicacion, String descripcion, String tipodePasta, String isbn, String numEjemplares,
+	public Libro(int idLibro, String titulo, String editorial, int numPaginas, String edicion, String idioma,
+			Date fechaPublicacion, String descripcion, String tipodePasta, String isbn, int numEjemplares,
 			String portada, String presentacion, Double precio, Categoria categoria, Autor autor) {
 		
 		this.idLibro = idLibro;
@@ -69,19 +102,19 @@ public class Libro {
 		this.editorial = editorial;
 	}
 
-	public String getNumPaginas() {
+	public double getNumPaginas() {
 		return numPaginas;
 	}
 
-	public void setNumPaginas(String numPaginas) {
-		this.numPaginas = numPaginas;
+	public void setNumPaginas(int i) {
+		this.numPaginas = i;
 	}
 
 	public String getEdicion() {
 		return edicion;
 	}
 
-	public void setEdicion(String edicion) {
+	public void setEdicion( String edicion) {
 		this.edicion = edicion;
 	}
 
@@ -125,12 +158,12 @@ public class Libro {
 		this.isbn = isbn;
 	}
 
-	public String getNumEjemplares() {
+	public int getNumEjemplares() {
 		return numEjemplares;
 	}
 
-	public void setNumEjemplares(String numEjemplares) {
-		this.numEjemplares = numEjemplares;
+	public void setNumEjemplares(int i) {
+		this.numEjemplares = i;
 	}
 
 	public String getPortada() {
